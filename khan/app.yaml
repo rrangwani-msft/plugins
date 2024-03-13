@@ -1,0 +1,26 @@
+openapi: 3.0.1
+info:
+  title: Khanmigo
+  description: A plugin that is an AI powered learning tutor that uses material from the reputable and trusted source of Khan Academy. Khanmigo is trustworthy, provides continuity across the learning journey, and provides embedded Khan Academy content. 
+  version: 0.1.0
+servers:
+  - url: https://www.khanacademy.org/api/internal/_rg/khanmigo/search_content?
+paths:
+  /:
+    get:
+      operationId: getTutorial
+      description: Gets the probable tutorial given the subject matter.
+      parameters:
+        - name: query
+          in: query
+          description: The subject being searched for
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK - Returns a list of relevant tutorial links
+          content:
+            application/json:
+              schema:
+                type: string
