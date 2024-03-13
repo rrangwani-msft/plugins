@@ -23,9 +23,15 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-              example:
-                - description: "It's a great, big universe out there. In this section of Khan Academy, you'll learn about the brain-bending vastness of time and space. We go from plate tectonics here on Earth to entire galaxies and beyond."
-                  kind: Course
-                  title: Cosmology and astronomy
-                  url: https://khanacademy.org/science/cosmology-and-astronomy
+                type: array
+                items:
+                  type: object
+                  properties:
+                    kind:
+                      type: string
+                    description:
+                      type: string
+                    url:
+                      type: string
+                    title:
+                      type: string
