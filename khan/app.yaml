@@ -4,9 +4,9 @@ info:
   description: A plugin that is an AI powered learning tutor that uses material from the reputable and trusted source of Khan Academy. Khanmigo is trustworthy, provides continuity across the learning journey, and provides embedded Khan Academy content. 
   version: 0.1.0
 servers:
-  - url: https://www.khanacademy.org/api/internal/_rg/khanmigo/search_content?
+  - url: https://www.khanacademy.org/api/internal/_rg/khanmigo
 paths:
-  /:
+  /search_content:
     get:
       operationId: getTutorial
       description: Gets the probable tutorial given the subject matter.
